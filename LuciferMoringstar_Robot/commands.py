@@ -19,9 +19,6 @@ async def start_message(bot, message):
              ],[
              InlineKeyboardButton("ℹ️ Help", callback_data="help"),
              InlineKeyboardButton("😎 About", callback_data="about") 
-             ],[
-             InlineKeyboardButton("🗳 Deploy", url="https://youtu.be/LkY2feKT2k0"),
-             InlineKeyboardButton("🤖 Support", url="https://t.me/HTDGROUPFORMOVIES")
              ]]
         else:
             buttons = [[
@@ -29,10 +26,7 @@ async def start_message(bot, message):
              ],[
              InlineKeyboardButton("ℹ️ Help", callback_data="bot_owner"),
              InlineKeyboardButton("😎 About", callback_data="about") 
-             ],[
-             InlineKeyboardButton("🗳 Deploy", url="https://youtu.be/LkY2feKT2k0"),
-             InlineKeyboardButton("🤖 Support", url="https://t.me/HTDGROUPFORMOVIES")
-             ]]    
+              ]]    
         await message.reply_photo(photo = choice(BOT_PICS), caption=START_MSG.format(mention = message.from_user.mention, bot_name = bot_info.BOT_NAME, bot_username = bot_info.BOT_USERNAME), reply_markup=InlineKeyboardMarkup(buttons))
         
     elif len(message.command) ==2 and message.command[1] in ["subscribe"]:
